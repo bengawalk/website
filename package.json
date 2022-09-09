@@ -1,0 +1,18 @@
+{
+  "name": "bengawalk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:chaitanya-deep/bengawalk.git",
+  "author": "Deep <deep@euclidxr.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "vite --mode development --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview",
+    "publish": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "gh-pages": "^4.0.0",
+    "vite": "^3.1.0"
+  }
+}
