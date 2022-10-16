@@ -2,7 +2,7 @@
   "name": "bengawalk",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:chaitanya-deep/bengawalk.git",
+  "repository": "git@github.com:bengawalk/website.git",
   "author": "Deep <deep@euclidxr.com>",
   "license": "MIT",
   "scripts": {
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "gh-pages": "^4.0.0",
+    "google-polyline": "^1.0.3",
     "vite": "^3.1.0"
   }
 }
