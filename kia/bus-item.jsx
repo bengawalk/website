@@ -1,5 +1,5 @@
 import React from "react";
-import IconBus from "../assets/icon-bus";
+import IconBus from "./icon-bus";
 import {STOPS_DATA} from "./contants";
 import BusItemTime from "./bus-item-time";
 

@@ -16,7 +16,10 @@ class Map extends React.PureComponent {
   }
 
   componentDidMount() {
-    const { busData } = this.props;
+    const {
+      busData,
+      selectedTab,
+    } = this.props;
     const { lng, lat, zoom } = this.state;
     const map = new mapboxgl.Map({
       container: this.mapContainer.current,
@@ -34,32 +37,67 @@ class Map extends React.PureComponent {
     });
 
     map.on('load', () => {
-      map.addSource('route', {
-        'type': 'geojson',
-        'data': {
-          'type': 'Feature',
-          'properties': {},
-          'geometry': {
-            'type': 'MultiLineString',
-            'coordinates':
-              busData.map(b => polyline.decode(decodeURIComponent(b.route))),
+      busData.map(b => {
+        const routeName = `route-${selectedTab}-${b.name}`;
+        map.addSource(routeName, {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+              'type': 'LineString',
+              'coordinates':
+                polyline.decode(decodeURIComponent(b.route)),
+            }
           }
-        }
-      });
-      map.addLayer({
-        'id': 'route',
-        'type': 'line',
-        'source': 'route',
-        'layout': {
-          'line-join': 'round',
-          'line-cap': 'round'
-        },
-        'paint': {
-          'line-color': '#038cfc',
-          'line-width': 4
-        }
-      });
+        });
+        map.addLayer({
+          'id': routeName,
+          'type': 'line',
+          'source': routeName,
+          'layout': {
+            'line-join': 'round',
+            'line-cap': 'round'
+          },
+          'paint': {
+            'line-color': '#aaaaaa',
+            'line-width': 4
+          }
+        });
+      })
     });
+
+    // 038cfc
+
+    this.map = map;
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const { location, selectedBus, selectedTab } = this.props;
+    const { location: prevLocation, selectedBus: prevSelectedBus, selectedTab: prevSelectedTab } = prevProps;
+    if(location && !prevLocation) {
+
+      const el = document.createElement('div');
+      el.className = 'location-indicator';
+
+      this.locationMarker = new mapboxgl.Marker(el)
+        .setLngLat(location)
+        .addTo(this.map);
+    }
+    if(selectedBus !== prevSelectedBus) {
+      if(prevSelectedBus) {
+        const prevLayerName = `route-${prevSelectedTab}-${prevSelectedBus}`;
+        const prevLayer = this.map.getLayer(prevLayerName);
+        this.map.setPaintProperty(prevLayer.id, 'line-color', "#aaaaaa");
+      }
+
+      if(selectedBus) {
+        const currentLayerName = `route-${selectedTab}-${selectedBus}`;
+        const currentLayer = this.map.getLayer(currentLayerName);
+        this.map.moveLayer(currentLayer.id);
+        this.map.setPaintProperty(currentLayer.id, 'line-color', "#038cfc");
+      }
+    }
   }
 
   render() {
