@@ -7,7 +7,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        kia: resolve(__dirname, 'kia/index.html')
       }
     }
   }
