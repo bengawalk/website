@@ -57,6 +57,11 @@
   resolved "https://registry.yarnpkg.com/@mapbox/whoots-js/-/whoots-js-3.1.0.tgz#497c67a1cef50d1a2459ba60f315e448d2ad87fe"
   integrity sha512-Es6WcD0nO5l+2BOQS4uLfNPYQaNDfbot3X1XUoloz+x0mPDS3eeORZJl06HXjwBG1fOGwCRnzK88LMdxKRrd6Q==
 
+"@material-design-icons/font@^0.14.7":
+  version "0.14.7"
+  resolved "https://registry.yarnpkg.com/@material-design-icons/font/-/font-0.14.7.tgz#c86bf309f8c4caf4457808da2a5c7059e63267c7"
+  integrity sha512-3lM2+smL+CoLVkS1D9l3ahCBHSr2iBYeNm+A8yXuRz6rJ796pTMAhrtbxmEhjZD1JzOXLq0Qx1M4TzIRAfDrsA==
+
 anymatch@~3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-3.1.2.tgz#c0557c096af32f106198f4f4e2a383537e378716"

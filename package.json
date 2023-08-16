@@ -6,12 +6,14 @@
   "author": "Deep <deep@euclidxr.com>",
   "license": "MIT",
   "scripts": {
-    "start": "vite --mode development --host 0.0.0.0 --port 3000",
-    "build": "vite build",
+    "start": "vite serve src --mode development --host 0.0.0.0 --port 3000 --config vite.config.js",
+    "build": "vite build src --config vite.config.js",
     "preview": "vite preview",
-    "publish": "gh-pages -d dist"
+    "publish": "gh-pages -d dist",
+    "prettier": "prettier --write src"
   },
   "dependencies": {
+    "@material-design-icons/font": "^0.14.7",
     "geolib": "^3.3.3",
     "gh-pages": "^4.0.0",
     "google-polyline": "^1.0.3",
