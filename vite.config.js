@@ -1,5 +1,6 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import { VitePluginRadar } from 'vite-plugin-radar';
 
 export default defineConfig({
   envDir: resolve(__dirname),
@@ -14,5 +15,12 @@ export default defineConfig({
     },
     outDir: resolve(__dirname, "dist"),
   },
-  plugins: [],
+  plugins: [
+    VitePluginRadar({
+      // Google Analytics tag injection
+      analytics: {
+        id: 'G-Q626RY3TZM',
+      },
+    }),
+  ],
 });
