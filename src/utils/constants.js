@@ -80,7 +80,7 @@ export const PORTFOLIO_ITEMS = [
   // Films
   {
     image: ThumbnailK100,
-    link: "https://youtu.be/MGdEpDhEA2U",
+    link: "https://youtu.be/I0akctyI4Us",
     title: "K100 Citizen's Waterway | ಬೆಂಗಳೂರಿನ ನಾಗರಿಕರ ಜಲಮಾರ್ಗ",
     desc: "The story of and the people behind the revival of the K100 waterway.",
     category: CATEGORIES.FILMS,

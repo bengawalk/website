@@ -11,6 +11,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "src/index.html"),
         "category": resolve(__dirname, "src/category/index.html"),
+        "contact": resolve(__dirname, "src/contact/index.html"),
       },
     },
     outDir: resolve(__dirname, "dist"),

@@ -9,7 +9,7 @@ const DataVizPage = () => {
   return (
     <>
       <Navbar>
-        Contact - Bengawalk
+        Contact
       </Navbar>
       <div id="page-contents">
         Bengawalk is a journal about life in Bangalore.<br /><br />

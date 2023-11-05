@@ -29,6 +29,11 @@ html {
   margin: 0;
   background-color: transparent;
   cursor: pointer;
+  outline: none;
+  &:focus {
+    outline: none;
+    background-color: transparent;
+  }
 }
 
 #nav-text {

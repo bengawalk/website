@@ -64,7 +64,7 @@ const Navbar = ({ children }) => {
               ) : (
                 <div className="sidebar-padding sidemenu-overflow">
                   <div id="sidebar-list">
-                    <a href="/">All</a>
+                    <a href="/">Home</a>
                     <a href="/category/?id=tools">Tools</a>
                     <a href="/category/?id=data%20viz">Data viz</a>
                     <a href="/category/?id=films">Films</a>

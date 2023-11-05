@@ -10,7 +10,7 @@ const DataVizPage = () => {
   return (
     <>
       <Navbar>
-        <span id="header-category">{ id }</span> - Bengawalk
+        <span id="header-category">{ id.toLowerCase() }</span>
       </Navbar>
       <PageComponent pageFilter={{ category: id }} />
     </>
